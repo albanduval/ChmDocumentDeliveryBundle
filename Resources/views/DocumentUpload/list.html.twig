@@ -1,0 +1,71 @@
+{% extends "ChmDocumentBundle:DocumentUpload:documentUploadLayout.html.twig" %}
+
+{% block title %}ChmDocumentBundle:DocumentUpload:edit{% endblock %}
+
+{% block h1 %}
+Gestion des documents
+{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-md-10">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Slug</th>
+					<th>Created by</th>
+					<th>Restrictions</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for document in documents %}
+				<tr class="">
+				    <td>{{ document.slug }}</td>
+				    <td>
+				    	{{ document.createdBy.username }}
+				    </td>
+				    <td>
+				    	{% include 'ChmDocumentBundle:DocumentUpload:document_restrictions_list.html.twig' with {'document': document } %}
+				    </td>
+				    <td>
+				    	<ul class="list-inline">
+				    		<li>
+						        <a class="btn btn-default chm_tooltip" title="Download" href="{{ path('chm_document_download', {'slug': document.slug}) }}">
+						        	<i class="fa fa-download"></i>
+						        </a>
+					        </li>
+					        <li>
+						        <a class="btn btn-default chm_tooltip" title="Send download link by email" href="{{ path('chm_document_send', {'id': document.id}) }}">
+						        	<i class="fa fa-envelope"></i>
+						        </a>
+					        </li>
+					        <li>
+						        <a class="btn btn-default chm_tooltip" title="Edit" href="{{ path('chm_document_edit', {'id': document.id}) }}">
+						        	<i class="fa fa-edit"></i>
+					        	</a>
+					        </li>
+					        <li>
+						        <a class="btn btn-danger chm_tooltip" title="Delete" href="{{ path('chm_document_delete', {'id': document.id}) }}">
+						        	<i class="fa fa-times"></i>
+						        </a>
+					        </li>
+					    </ul>
+				    </td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-2">
+		<a class="btn btn-primary" href="{{ path('chm_document_create') }}">
+			<i class="fa fa-upload"></i>
+			Upload new document
+		</a>
+		<form>
+			Filters:
+			{{ form(filterForm) }}
+		</form>
+	</div>
+</div>
+{% endblock %}
