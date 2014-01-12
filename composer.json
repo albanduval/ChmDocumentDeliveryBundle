@@ -2,8 +2,8 @@
     "name": "chm/documentdelivery-bundle",
     "type": "symfony-bundle",
     "description": "Symfony ChmDocumentDelivery",
-    "keywords": ["User management"],
-    "homepage": "http://github.com/albanduval/ChmDocumentDeliveryBundle",
+    "keywords": ["Document delivery made easy"],
+    "homepage": "https://github.com/albanduval/ChmDocumentDeliveryBundle",
     "license": "MIT",
     "version": "1.0.0-dev",
     "authors": [
