@@ -1,0 +1,59 @@
+{
+    "name": "chm/document-delivery",
+    "type": "symfony-bundle",
+    "description": "Symfony ChmDocumentDelivery",
+    "keywords": ["User management"],
+    "homepage": "http://github.com/albanduval/ChmDocumentDeliveryBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alban Duval",
+            "email": "albanduval@profideo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.11",
+        "symfony/framework-bundle": "~2.4",
+        "symfony/form": "~2.4",
+        "symfony/security-bundle": "~2.4",
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "mopa/bootstrap-bundle": "dev-master",
+        "twbs/bootstrap": "dev-master"
+    },
+    "require-dev": {
+        "twig/twig": "~1.5",
+        "doctrine/doctrine-bundle": "*",
+        "swiftmailer/swiftmailer": ">=4.3, <6.0",
+        "symfony/yaml": "~2.4",
+        "symfony/validator": "~2.4"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
+        ]
+    },
+    "autoload": {
+        "psr-0": { "Chm\\DocumentDeliveryBundle": "" }
+    },
+    "target-dir": "Chm/DocumentDeliveryBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
