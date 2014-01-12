@@ -1,5 +1,5 @@
 {
-    "name": "chm/document-delivery",
+    "name": "chm/documentdelivery-bundle",
     "type": "symfony-bundle",
     "description": "Symfony ChmDocumentDelivery",
     "keywords": ["User management"],
