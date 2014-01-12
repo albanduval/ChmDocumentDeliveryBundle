@@ -19,7 +19,7 @@
         "symfony/form": "~2.4",
         "symfony/security-bundle": "~2.4",
         "stof/doctrine-extensions-bundle": "~1.1@dev",
-        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/user-bundle": "dev-master",
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "dev-master"
     },
